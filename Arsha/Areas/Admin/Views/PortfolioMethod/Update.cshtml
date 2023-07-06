@@ -1,0 +1,39 @@
+﻿@model Portfolio
+<table class="table">
+    <thead>
+        <tr class="text-nowrap">
+            <th>Id</th>
+            <th>Category Id</th>
+            <th>Image</th>
+            <th>Created Time</th>
+            <th>Update Time</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>@Model.PortfolioCategoryId</td>
+                <td>@Model.Image</td>B
+                <td>@Model.CreatedTime</td>
+                <td>@Model.UpdateTime</td>
+            </tr>
+    </tbody>
+</table>
+<form method="post">
+    <div class="mb-3 col-md-6">
+        <label for="portfoliocategoryid" class="form-label">Portfolio Category Id</label>
+        <input class="form-control"
+               type="text"
+               asp-for="@Model.PortfolioCategoryId"
+               placeholder="@Model.PortfolioCategoryId" />
+        @Html.AntiForgeryToken()
+
+    </div>
+    <div class="mb-3 col-md-6">
+        <label for="image" class="form-label">Image</label>
+        <input class="form-control" type="text" asp-for="@Model.Image" placeholder="@Model.Image" />
+        <span class="text text-danger" asp-validation-for="@Model.Image"></span>
+        @Html.AntiForgeryToken()
+    </div>
+    <button type="submit">Save</button>
+</form> 

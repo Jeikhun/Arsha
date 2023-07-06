@@ -1,0 +1,28 @@
+﻿@model Service
+<form method="post">
+    <div class="mb-3 col-md-6">
+        <label for="title" class="form-label">Title</label>
+        <input class="form-control"
+               type="text"
+               asp-for="@Model.Title"
+               placeholder="@Model.Title"/>
+        @Html.AntiForgeryToken()
+
+    </div>
+    <div class="mb-3 col-md-6">
+        <label for="image" class="form-label">Image</label>
+        <input class="form-control" type="text" asp-for="@Model.Image" placeholder="@Model.Image" />
+        <span class="text text-danger" asp-validation-for="@Model.Image" ></span>
+        @Html.AntiForgeryToken()
+    </div>
+    <div class="mb-3 col-md-6">
+        <label for="text" class="form-label">Text</label>
+        <input class="form-control"
+               type="text"
+               asp-for="@Model.Text"
+               placeholder="@Model.Text" />
+        @Html.AntiForgeryToken()
+
+    </div>
+    <button type="submit">Save</button>
+</form> 
